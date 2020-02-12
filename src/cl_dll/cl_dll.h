@@ -1,10 +1,10 @@
 /***
 *
-*	Copyright (c) 1996-2002, Valve LLC. All rights reserved.
-*	
-*	This product contains software technology licensed from Id 
-*	Software, Inc. ("Id Technology").  Id Technology (c) 1996 Id Software, Inc. 
-*	All Rights Reserved.
+*  Copyright (c) 1996-2002, Valve LLC. All rights reserved.
+*  
+*  This product contains software technology licensed from Id 
+*  Software, Inc. ("Id Technology").  Id Technology (c) 1996 Id Software, Inc. 
+*  All Rights Reserved.
 *
 *   Use, distribution, and modification of this source code and/or resulting
 *   object code is restricted to non-commercial enhancements to products from
@@ -21,9 +21,9 @@
 //
 //  This DLL is linked by the client when they first initialize.
 // This DLL is responsible for the following tasks:
-//		- Loading the HUD graphics upon initialization
-//		- Drawing the HUD graphics every frame
-//		- Handling the custum HUD-update packets
+//    - Loading the HUD graphics upon initialization
+//    - Drawing the HUD graphics every frame
+//    - Handling the custum HUD-update packets
 //
 
 #include "Platform.h"

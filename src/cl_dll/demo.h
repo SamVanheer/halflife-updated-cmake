@@ -1,4 +1,4 @@
-//========= Copyright © 1996-2002, Valve LLC, All rights reserved. ============
+//========= Copyright ï¿½ 1996-2002, Valve LLC, All rights reserved. ============
 //
 // Purpose: 
 //
@@ -12,8 +12,8 @@
 // Types of demo messages we can write/parse
 enum
 {
-	TYPE_SNIPERDOT = 0,
-	TYPE_ZOOM
+  TYPE_SNIPERDOT = 0,
+  TYPE_ZOOM
 };
 
 void Demo_WriteBuffer( int type, int size, unsigned char *buffer );

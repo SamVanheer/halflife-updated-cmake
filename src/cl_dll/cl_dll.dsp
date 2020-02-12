@@ -61,9 +61,9 @@ InputName=client
 SOURCE="$(InputPath)"
 
 BuildCmds= \
-	call ..\filecopy.bat $(InputDir)\$(InputName).dll $(ProjDir)\..\..\game\mod\cl_dlls\$(InputName).dll \
-	call ..\filecopy.bat $(InputDir)\$(InputName).pdb $(ProjDir)\..\..\game\mod\cl_dlls\$(InputName).pdb \
-	
+  call ..\filecopy.bat $(InputDir)\$(InputName).dll $(ProjDir)\..\..\game\mod\cl_dlls\$(InputName).dll \
+  call ..\filecopy.bat $(InputDir)\$(InputName).pdb $(ProjDir)\..\..\game\mod\cl_dlls\$(InputName).pdb \
+  
 
 "$(ProjDir)\..\..\game\mod\cl_dlls\$(InputName).dll" : $(SOURCE) "$(INTDIR)" "$(OUTDIR)"
    $(BuildCmds)
@@ -106,9 +106,9 @@ InputName=client
 SOURCE="$(InputPath)"
 
 BuildCmds= \
-	call ..\filecopy.bat $(InputDir)\$(InputName).dll $(ProjDir)\..\..\game\mod\cl_dlls\$(InputName).dll \
-	call ..\filecopy.bat $(InputDir)\$(InputName).pdb $(ProjDir)\..\..\game\mod\cl_dlls\$(InputName).pdb \
-	
+  call ..\filecopy.bat $(InputDir)\$(InputName).dll $(ProjDir)\..\..\game\mod\cl_dlls\$(InputName).dll \
+  call ..\filecopy.bat $(InputDir)\$(InputName).pdb $(ProjDir)\..\..\game\mod\cl_dlls\$(InputName).pdb \
+  
 
 "$(ProjDir)\..\..\game\mod\cl_dlls\$(InputName).dll" : $(SOURCE) "$(INTDIR)" "$(OUTDIR)"
    $(BuildCmds)

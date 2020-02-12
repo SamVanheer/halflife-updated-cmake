@@ -1,4 +1,4 @@
-//========= Copyright © 1996-2002, Valve LLC, All rights reserved. ============
+//========= Copyright ï¿½ 1996-2002, Valve LLC, All rights reserved. ============
 //
 // Purpose: 
 //
@@ -21,4 +21,4 @@ void CAM_ClearStates( void );
 void CAM_StartMouseMove(void);
 void CAM_EndMouseMove(void);
 
-#endif		// _CAMERA_H_
+#endif    // _CAMERA_H_

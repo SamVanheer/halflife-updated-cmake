@@ -1,10 +1,10 @@
 /***
 *
-*	Copyright (c) 1999, Valve LLC. All rights reserved.
-*	
-*	This product contains software technology licensed from Id 
-*	Software, Inc. ("Id Technology").  Id Technology (c) 1996 Id Software, Inc. 
-*	All Rights Reserved.
+*  Copyright (c) 1999, Valve LLC. All rights reserved.
+*  
+*  This product contains software technology licensed from Id 
+*  Software, Inc. ("Id Technology").  Id Technology (c) 1996 Id Software, Inc. 
+*  All Rights Reserved.
 *
 *   Use, distribution, and modification of this source code and/or resulting
 *   object code is restricted to non-commercial enhancements to products from
@@ -24,20 +24,20 @@
 #define HOOK_MESSAGE(x) gEngfuncs.pfnHookUserMsg(#x, __MsgFunc_##x );
 
 #define DECLARE_MESSAGE(y, x) int __MsgFunc_##x(const char *pszName, int iSize, void *pbuf) \
-							{ \
-							return gHUD.y.MsgFunc_##x(pszName, iSize, pbuf ); \
-							}
+              { \
+              return gHUD.y.MsgFunc_##x(pszName, iSize, pbuf ); \
+              }
 
 
 #define HOOK_COMMAND(x, y) gEngfuncs.pfnAddCommand( x, __CmdFunc_##y );
 #define DECLARE_COMMAND(y, x) void __CmdFunc_##x( void ) \
-							{ \
-								gHUD.y.UserCmd_##x( ); \
-							}
+              { \
+                gHUD.y.UserCmd_##x( ); \
+              }
 
-inline float CVAR_GET_FLOAT( const char *x ) {	return gEngfuncs.pfnGetCvarFloat( (char*)x ); }
-inline char* CVAR_GET_STRING( const char *x ) {	return gEngfuncs.pfnGetCvarString( (char*)x ); }
-inline struct cvar_s *CVAR_CREATE( const char *cv, const char *val, const int flags ) {	return gEngfuncs.pfnRegisterVariable( (char*)cv, (char*)val, flags ); }
+inline float CVAR_GET_FLOAT( const char *x ) {  return gEngfuncs.pfnGetCvarFloat( (char*)x ); }
+inline char* CVAR_GET_STRING( const char *x ) {  return gEngfuncs.pfnGetCvarString( (char*)x ); }
+inline struct cvar_s *CVAR_CREATE( const char *cv, const char *val, const int flags ) {  return gEngfuncs.pfnRegisterVariable( (char*)cv, (char*)val, flags ); }
 
 #define SPR_Load (*gEngfuncs.pfnSPR_Load)
 #define SPR_Set (*gEngfuncs.pfnSPR_Set)
@@ -67,11 +67,11 @@ inline struct cvar_s *CVAR_CREATE( const char *cv, const char *val, const int fl
 #define BASE_XRES 640.f
 
 // use this to project world coordinates to screen coordinates
-#define XPROJECT(x)	( (1.0f+(x))*ScreenWidth*0.5f )
+#define XPROJECT(x)  ( (1.0f+(x))*ScreenWidth*0.5f )
 #define YPROJECT(y) ( (1.0f-(y))*ScreenHeight*0.5f )
 
-#define XRES(x)					(x  * ((float)ScreenWidth / 640))
-#define YRES(y)					(y  * ((float)ScreenHeight / 480))
+#define XRES(x)          (x  * ((float)ScreenWidth / 640))
+#define YRES(y)          (y  * ((float)ScreenHeight / 480))
 
 #define GetScreenInfo (*gEngfuncs.pfnGetScreenInfo)
 #define ServerCmd (*gEngfuncs.pfnServerCmd)
@@ -81,74 +81,74 @@ inline struct cvar_s *CVAR_CREATE( const char *cv, const char *val, const int fl
 
 
 // Gets the height & width of a sprite,  at the specified frame
-inline int SPR_Height( HSPRITE x, int f )	{ return gEngfuncs.pfnSPR_Height(x, f); }
-inline int SPR_Width( HSPRITE x, int f )	{ return gEngfuncs.pfnSPR_Width(x, f); }
+inline int SPR_Height( HSPRITE x, int f )  { return gEngfuncs.pfnSPR_Height(x, f); }
+inline int SPR_Width( HSPRITE x, int f )  { return gEngfuncs.pfnSPR_Width(x, f); }
 
-inline 	client_textmessage_t	*TextMessageGet( const char *pName ) { return gEngfuncs.pfnTextMessageGet( pName ); }
-inline 	int						TextMessageDrawChar( int x, int y, int number, int r, int g, int b ) 
+inline   client_textmessage_t  *TextMessageGet( const char *pName ) { return gEngfuncs.pfnTextMessageGet( pName ); }
+inline   int            TextMessageDrawChar( int x, int y, int number, int r, int g, int b ) 
 { 
-	return gEngfuncs.pfnDrawCharacter( x, y, number, r, g, b ); 
+  return gEngfuncs.pfnDrawCharacter( x, y, number, r, g, b ); 
 }
 
 inline int DrawConsoleString( int x, int y, const char *string )
 {
-	return gEngfuncs.pfnDrawConsoleString( x, y, (char*) string );
+  return gEngfuncs.pfnDrawConsoleString( x, y, (char*) string );
 }
 
 inline void GetConsoleStringSize( const char *string, int *width, int *height )
 {
-	gEngfuncs.pfnDrawConsoleStringLen( string, width, height );
+  gEngfuncs.pfnDrawConsoleStringLen( string, width, height );
 }
 
 inline int ConsoleStringLen( const char *string )
 {
-	int _width, _height;
-	GetConsoleStringSize( string, &_width, &_height );
-	return _width;
+  int _width, _height;
+  GetConsoleStringSize( string, &_width, &_height );
+  return _width;
 }
 
 inline void ConsolePrint( const char *string )
 {
-	gEngfuncs.pfnConsolePrint( string );
+  gEngfuncs.pfnConsolePrint( string );
 }
 
 inline void CenterPrint( const char *string )
 {
-	gEngfuncs.pfnCenterPrint( string );
+  gEngfuncs.pfnCenterPrint( string );
 }
 
 
 inline char *safe_strcpy( char *dst, const char *src, int len_dst)
 {
-	if( len_dst <= 0 )
-	{
-		return NULL; // this is bad
-	}
+  if( len_dst <= 0 )
+  {
+    return NULL; // this is bad
+  }
 
-	strncpy(dst,src,len_dst);
-	dst[ len_dst - 1 ] = '\0';
+  strncpy(dst,src,len_dst);
+  dst[ len_dst - 1 ] = '\0';
 
-	return dst;
+  return dst;
 }
 
 inline int safe_sprintf( char *dst, int len_dst, const char *format, ...)
 {
-	if( len_dst <= 0 )
-	{
-		return -1; // this is bad
-	}
+  if( len_dst <= 0 )
+  {
+    return -1; // this is bad
+  }
 
-	va_list v;
+  va_list v;
 
     va_start(v, format);
 
-	_vsnprintf(dst,len_dst,format,v);
+  _vsnprintf(dst,len_dst,format,v);
 
-	va_end(v);
+  va_end(v);
 
-	dst[ len_dst - 1 ] = '\0';
+  dst[ len_dst - 1 ] = '\0';
 
-	return 0;
+  return 0;
 }
 
 // sound functions
@@ -177,9 +177,9 @@ extern vec3_t vec3_origin;
 
 inline void UnpackRGB(int &r, int &g, int &b, unsigned long ulRGB)\
 {\
-	r = (ulRGB & 0xFF0000) >>16;\
-	g = (ulRGB & 0xFF00) >> 8;\
-	b = ulRGB & 0xFF;\
+  r = (ulRGB & 0xFF0000) >>16;\
+  g = (ulRGB & 0xFF00) >> 8;\
+  b = ulRGB & 0xFF;\
 }
 
 HSPRITE LoadSprite(const char *pszName);
