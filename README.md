@@ -1,5 +1,3 @@
-[See the wiki for setup instructions](https://github.com/Solokiller/halflife-updated-cmake/wiki/Setting-up-the-source-code)
-
 Half Life 1 SDK LICENSE
 ======================
 
